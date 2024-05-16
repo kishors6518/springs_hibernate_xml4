@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean class="springs_hibernate_xml4.dto.Language"
+		id="marathi">
+		<property name="id" value="1"></property>
+		<property name="name" value="Marathi"></property>
+		<property name="origin" value="Maharashtra"></property>
+	</bean>
+	<bean class="springs_hibernate_xml4.dto.Language"
+		id="hindi">
+		<property name="id" value="2"></property>
+		<property name="name" value="Hindi"></property>
+		<property name="origin" value="India"></property>
+	</bean>
+	<bean class="springs_hibernate_xml4.dto.Language"
+		id="english">
+		<property name="id" value="3"></property>
+		<property name="name" value="English"></property>
+		<property name="origin" value="England"></property>
+	</bean>
+	<bean class="springs_hibernate_xml4.dto.Language"
+		id="french">
+		<property name="id" value="4"></property>
+		<property name="name" value="French"></property>
+		<property name="origin" value="France"></property>
+	</bean>
+
+	<bean class="springs_hibernate_xml4.dto.Person" id="o">
+		<property name="id" value="101"></property>
+		<property name="name" value="Omkar"></property>
+		<property name="phone" value="703645674"></property>
+		<property name="address" value="Bhosari"></property>
+		<property name="lang">
+			<list>
+				<ref bean="marathi" />
+				<ref bean="hindi" />
+				<ref bean="english" />
+				<ref bean="french" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="springs_hibernate_xml4.dto.Person" id="a">
+		<property name="id" value="102"></property>
+		<property name="name" value="Ajit"></property>
+		<property name="phone" value="987654321"></property>
+		<property name="address" value="Nanded"></property>
+		<property name="lang">
+			<list>
+				<ref bean="hindi" />
+				<ref bean="marathi" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="springs_hibernate_xml4.dto.Person" id="v">
+		<property name="id" value="103"></property>
+		<property name="name" value="Vijay"></property>
+		<property name="phone" value="876543210"></property>
+		<property name="address" value="Sangli"></property>
+		<property name="lang">
+			<list>
+				<ref bean="english" />
+				<ref bean="french" />
+			</list>
+		</property>
+	</bean>
+
+	<bean class="springs_hibernate_xml4.dao.PersonDao"
+		id="dao"></bean>
+
+</beans>
